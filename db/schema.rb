@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623182919) do
+ActiveRecord::Schema.define(version: 20160623191127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "character_stats", force: :cascade do |t|
+    t.integer  "character_id"
+    t.integer  "stat_id"
+    t.integer  "value"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "character_stats", ["character_id"], name: "index_character_stats_on_character_id", using: :btree
+  add_index "character_stats", ["stat_id"], name: "index_character_stats_on_stat_id", using: :btree
 
   create_table "characters", force: :cascade do |t|
     t.integer  "user_id"
@@ -57,6 +68,8 @@ ActiveRecord::Schema.define(version: 20160623182919) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["token"], name: "index_users_on_token", unique: true, using: :btree
 
+  add_foreign_key "character_stats", "characters"
+  add_foreign_key "character_stats", "stats"
   add_foreign_key "characters", "users"
   add_foreign_key "examples", "users"
 end

@@ -2,5 +2,5 @@
 class User < ActiveRecord::Base
   include Authentication
   has_many :examples
-  has_many :characters
+  has_many :characters, dependent: :destroy
 end
