@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :spells, only: [:index, :show]
   resources :skills, only: [:index, :show]
   resources :character_stats, except: [:new, :edit]
   resources :stats, only: [:index, :show]
