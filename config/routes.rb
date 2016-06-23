@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :stats, only: [:index, :show]
   resources :characters, except: [:new, :edit]
   resources :examples, except: [:new, :edit]
   post '/sign-up' => 'users#signup'

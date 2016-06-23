@@ -17,17 +17,17 @@
                password_confirmation: nil)
 end
 
-def character_params
-  {
-    user_id: '1',
-    name: 'Mal Reynolds',
-    race: 'Human',
-    deity: 'open skies',
-    alignment: 'Chaotic Good',
-    currency: '142.50',
-    age: '31',
-    gender: 'm'
-  }
-end
-
-  Character.create!(character_params)
+# def character_params
+#   {
+#     user_id: '1',
+#     name: 'Mal Reynolds',
+#     race: 'Human',
+#     deity: 'open skies',
+#     alignment: 'Chaotic Good',
+#     currency: '142.50',
+#     age: '31',
+#     gender: 'm'
+#   }
+# end
+#
+#   Character.create!(character_params)
