@@ -55,6 +55,6 @@ class CharacterStatsController < ApplicationController
   end
 
   def character_stat_params
-    params.require(:stat).permit(:character_id, :stat_id, :value)
+    params.require(:stat).permit(:character_id, :stat_id, :stat_value, :saving_throw)
   end
 end

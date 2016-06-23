@@ -32,4 +32,6 @@ end
 
 Character.create!(character_params)
 
-CharacterStat.create!(stat_id: 1, character_id: 1, value: 15)
+CharacterStat.create!(stat_id: 1, character_id: 1, stat_value: 15, saving_throw: 3)
+
+CharacterSkill.create!(skill_id: 1, character_id: 1, value: 15)
