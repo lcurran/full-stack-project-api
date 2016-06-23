@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623191127) do
+ActiveRecord::Schema.define(version: 20160623204508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,13 @@ ActiveRecord::Schema.define(version: 20160623191127) do
   end
 
   add_index "examples", ["user_id"], name: "index_examples_on_user_id", using: :btree
+
+  create_table "skills", force: :cascade do |t|
+    t.string   "name"
+    t.string   "primary_stat"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "stats", force: :cascade do |t|
     t.string   "name"

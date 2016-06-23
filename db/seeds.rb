@@ -13,3 +13,9 @@ Stat.transaction do
     Stat.create(stat.to_hash)
   end
 end
+
+Skill.transaction do
+  CSV.foreach 'data/skills.csv', headers: true do |skill|
+    Skill.create(skill.to_hash)
+  end
+end
