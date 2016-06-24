@@ -5,7 +5,16 @@ class CreateSpells < ActiveRecord::Migration
       t.string :school
       t.string :subschool
       t.string :descriptor
-      t.integer :spell_level
+      t.string :spell_level
+      t.string :casting_time
+      t.string :range
+      t.string :area
+      t.string :effect
+      t.string :targets
+      t.string :duration
+      t.string :saving_throw
+      t.string :spell_resistence
+      t.string :description
 
       t.timestamps null: false
     end

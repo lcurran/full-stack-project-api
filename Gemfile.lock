@@ -110,7 +110,7 @@ GEM
       activesupport (= 4.2.6)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (11.1.2)
+    rake (11.2.2)
     rb-readline (0.5.3)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
@@ -156,6 +156,7 @@ DEPENDENCIES
   active_model_serializers (= 0.10.0.rc4)
   bcrypt (~> 3.1.11)
   byebug (~> 8.2.2)
+  nokogiri
   pg
   pry (~> 0.10.3)
   pry-byebug (~> 3.3.0)
@@ -170,5 +171,8 @@ DEPENDENCIES
   spring (~> 1.6.4)
   spring-commands-rspec (~> 1.0.4)
 
+RUBY VERSION
+   ruby 2.3.0p0
+
 BUNDLED WITH
-   1.11.2
+   1.12.3

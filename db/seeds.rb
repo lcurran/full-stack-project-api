@@ -19,3 +19,10 @@ Skill.transaction do
     Skill.create(skill.to_hash)
   end
 end
+
+spells_path = "#{Rails.root}/data/spells.json"
+spells = JSON.parse(File.read(spells_path))
+
+spells.each do |spell|
+  Spell.create!(spell)
+end

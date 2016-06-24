@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623204508) do
+ActiveRecord::Schema.define(version: 20160623215516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,25 @@ ActiveRecord::Schema.define(version: 20160623204508) do
     t.string   "primary_stat"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "spells", force: :cascade do |t|
+    t.string   "name"
+    t.string   "school"
+    t.string   "subschool"
+    t.string   "descriptor"
+    t.string   "spell_level"
+    t.string   "casting_time"
+    t.string   "range"
+    t.string   "area"
+    t.string   "effect"
+    t.string   "targets"
+    t.string   "duration"
+    t.string   "saving_throw"
+    t.string   "spell_resistence"
+    t.string   "description"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "stats", force: :cascade do |t|
