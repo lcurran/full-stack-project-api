@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160623211310) do
-=======
-ActiveRecord::Schema.define(version: 20160623215516) do
->>>>>>> spells
+ActiveRecord::Schema.define(version: 20160624144014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +26,17 @@ ActiveRecord::Schema.define(version: 20160623215516) do
 
   add_index "character_skills", ["character_id"], name: "index_character_skills_on_character_id", using: :btree
   add_index "character_skills", ["skill_id"], name: "index_character_skills_on_skill_id", using: :btree
+
+  create_table "character_spells", force: :cascade do |t|
+    t.integer  "character_id"
+    t.integer  "spell_id"
+    t.string   "damage_modifier"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "character_spells", ["character_id"], name: "index_character_spells_on_character_id", using: :btree
+  add_index "character_spells", ["spell_id"], name: "index_character_spells_on_spell_id", using: :btree
 
   create_table "character_stats", force: :cascade do |t|
     t.integer  "character_id"
@@ -112,6 +119,8 @@ ActiveRecord::Schema.define(version: 20160623215516) do
 
   add_foreign_key "character_skills", "characters"
   add_foreign_key "character_skills", "skills"
+  add_foreign_key "character_spells", "characters"
+  add_foreign_key "character_spells", "spells"
   add_foreign_key "character_stats", "characters"
   add_foreign_key "character_stats", "stats"
   add_foreign_key "characters", "users"

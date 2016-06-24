@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+  resources :character_spells, except: [:new, :edit]
   resources :character_skills, except: [:new, :edit]
-=======
   resources :spells, only: [:index, :show]
->>>>>>> spells
   resources :skills, only: [:index, :show]
   resources :character_stats, except: [:new, :edit]
   resources :stats, only: [:index, :show]

@@ -1,19 +1,18 @@
 
-curl --include --request POST http://localhost:3000/character-skills \
+curl --include --request POST http://localhost:3000/character_spells \
   --header "Content-Type: application/json" \
   --data '{
-    "skills":{
-      "user_id": "1",
-      "name": "Wash"
+    "character_spell":{
+      "character_id": "1",
+      "spell_id": "5"
     }
   }'
 
-  curl --include --request PATCH http://localhost:3000/character_skills/1 \
+  curl --include --request PATCH http://localhost:3000/character_spells/1 \
     --header "Content-Type: application/json" \
     --data '{
-      "character_skill": {
-          "value": "12",
-          "stat_id": "2"
+      "character_spell": {
+          "damage_modifier": "12"
       }
     }'
 

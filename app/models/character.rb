@@ -4,4 +4,6 @@ class Character < ActiveRecord::Base
   has_many :stats, through: :character_stats
   has_many :character_skills, dependent: :destroy
   has_many :skills, through: :character_skills
+  has_many :character_spells, dependent: :destroy
+  has_many :spells, through: :character_spells
 end
