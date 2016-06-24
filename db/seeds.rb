@@ -20,6 +20,12 @@ Skill.transaction do
   end
 end
 
+Job.transaction do
+  CSV.foreach 'data/jobs.csv', headers: true do |job|
+    Job.create(job.to_hash)
+  end
+end
+
 spells_path = "#{Rails.root}/data/spells.json"
 spells = JSON.parse(File.read(spells_path))
 

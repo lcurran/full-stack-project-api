@@ -6,4 +6,6 @@ class Character < ActiveRecord::Base
   has_many :skills, through: :character_skills
   has_many :character_spells, dependent: :destroy
   has_many :spells, through: :character_spells
+  has_many :character_jobs, dependent: :destroy
+  has_many :jobs, through: :character_jobs
 end

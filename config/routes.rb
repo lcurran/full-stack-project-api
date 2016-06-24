@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :character_jobs, except: [:new, :edit]
+  resources :jobs, only: [:index, :show]
   resources :character_spells, except: [:new, :edit]
   resources :character_skills, except: [:new, :edit]
   resources :spells, only: [:index, :show]
