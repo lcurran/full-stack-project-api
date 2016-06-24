@@ -9,6 +9,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.create!(email: 'test', password: 'test')
+
 %w(antony jeff matt jason).each do |name|
   email = "#{name}@#{name}.com"
   next if User.exists? email: email
@@ -31,6 +33,8 @@ def character_params
 end
 
 Character.create!(character_params)
+
+Character.create!(user_id: '2', name:'Wash')
 
 CharacterStat.create!(stat_id: 1, character_id: 1, stat_value: 15, saving_throw: 3)
 

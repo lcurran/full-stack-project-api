@@ -1,12 +1,12 @@
-class CharactersController < ApplicationController
+class CharactersController < ProtectedController
   before_action :set_character, only: [:show, :update, :destroy]
+  skip_before_action :authenticate, only: [:show]
 
   # GET /characters
   # GET /characters.json
   def index
-    @characters = Character.all
-
-    render json: @characters
+      @characters = current_user.characters.all
+      render json: @characters
   end
 
   # GET /characters/1
