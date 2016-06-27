@@ -34,8 +34,13 @@ end
 
 Character.create!(character_params)
 
-Character.create!(user_id: '2', name:'Wash')
+Character.create!(user_id: '1', name: 'Wash')
+Character.create!(user_id: '1', name: 'Zoe')
+Character.create!(user_id: '1', name: 'River')
 
-CharacterStat.create!(stat_id: 1, character_id: 1, stat_value: 15, saving_throw: 3)
+CharacterStat.create!(stat_id: 1,
+                      character_id: 1,
+                      stat_value: 15,
+                      saving_throw: 3)
 
 CharacterSkill.create!(skill_id: 1, character_id: 1, value: 15)

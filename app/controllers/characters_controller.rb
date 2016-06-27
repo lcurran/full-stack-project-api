@@ -1,3 +1,4 @@
+#
 class CharactersController < ProtectedController
   before_action :set_character, only: [:show, :update, :destroy]
   skip_before_action :authenticate, only: [:show]
@@ -5,8 +6,8 @@ class CharactersController < ProtectedController
   # GET /characters
   # GET /characters.json
   def index
-      @characters = current_user.characters.all
-      render json: @characters
+    @characters = current_user.characters.all
+    render json: @characters
   end
 
   # GET /characters/1
@@ -49,11 +50,18 @@ class CharactersController < ProtectedController
 
   private
 
-    def set_character
-      @character = Character.find(params[:id])
-    end
+  def set_character
+    @character = Character.find(params[:id])
+  end
 
-    def character_params
-      params.require(:character).permit(:user_id, :name, :race, :deity, :alignment, :gender, :age, :currency)
-    end
+  def character_params
+    params.require(:character).permit(:user_id,
+                                      :name,
+                                      :race,
+                                      :deity,
+                                      :alignment,
+                                      :gender,
+                                      :age,
+                                      :currency)
+  end
 end

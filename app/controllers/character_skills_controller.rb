@@ -1,3 +1,4 @@
+#
 class CharacterSkillsController < ApplicationController
   before_action :set_character_skill, only: [:show, :update, :destroy]
 
@@ -21,7 +22,9 @@ class CharacterSkillsController < ApplicationController
     @character_skill = CharacterSkill.new(character_skill_params)
 
     if @character_skill.save
-      render json: @character_skill, status: :created, location: @character_skill
+      render json: @character_skill,
+             status: :created,
+             location: @character_skill
     else
       render json: @character_skill.errors, status: :unprocessable_entity
     end
@@ -49,11 +52,11 @@ class CharacterSkillsController < ApplicationController
 
   private
 
-    def set_character_skill
-      @character_skill = CharacterSkill.find(params[:id])
-    end
+  def set_character_skill
+    @character_skill = CharacterSkill.find(params[:id])
+  end
 
-    def character_skill_params
-      params.require(:character_skill).permit(:character_id, :skill_id, :value)
-    end
+  def character_skill_params
+    params.require(:character).permit(:character_id, :skill_id, :value)
+  end
 end

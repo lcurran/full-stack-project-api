@@ -1,3 +1,4 @@
+#
 class CharacterSpellsController < ApplicationController
   before_action :set_character_spell, only: [:show, :update, :destroy]
 
@@ -21,7 +22,9 @@ class CharacterSpellsController < ApplicationController
     @character_spell = CharacterSpell.new(character_spell_params)
 
     if @character_spell.save
-      render json: @character_spell, status: :created, location: @character_spell
+      render json: @character_spell,
+             status: :created,
+             location: @character_spell
     else
       render json: @character_spell.errors, status: :unprocessable_entity
     end
@@ -49,11 +52,13 @@ class CharacterSpellsController < ApplicationController
 
   private
 
-    def set_character_spell
-      @character_spell = CharacterSpell.find(params[:id])
-    end
+  def set_character_spell
+    @character_spell = CharacterSpell.find(params[:id])
+  end
 
-    def character_spell_params
-      params.require(:character_spell).permit(:character_id, :spell_id, :damage_modifier)
-    end
+  def character_spell_params
+    params.require(:character).permit(:character_id,
+                                      :spell_id,
+                                      :damage_modifier)
+  end
 end

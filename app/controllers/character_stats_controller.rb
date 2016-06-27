@@ -21,6 +21,7 @@ class CharacterStatsController < ApplicationController
   def create
     @character_stat = CharacterStat.new(character_stat_params)
 
+
     if @character_stat.save
       render json: @character_stat, status: :created, location: @character_stat
     else
@@ -55,6 +56,9 @@ class CharacterStatsController < ApplicationController
   end
 
   def character_stat_params
-    params.require(:character_skill).permit(:character_id, :stat_id, :stat_value, :saving_throw)
+    params.require(:character).permit(:character_id,
+                                      :stat_id,
+                                      :stat_value,
+                                      :saving_throw)
   end
 end
