@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20160624152047) do
   create_table "character_skills", force: :cascade do |t|
     t.integer  "character_id"
     t.integer  "skill_id"
-    t.integer  "value"
+    t.integer  "skill_value"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

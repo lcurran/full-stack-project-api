@@ -1,6 +1,8 @@
 #
-class CharacterStatsController < ApplicationController
+class CharacterStatsController < ProtectedController
   before_action :set_character_stat, only: [:show, :update, :destroy]
+  skip_before_action :authenticate, only: [:index, :show]
+
 
   # GET /character_stats
   # GET /character_stats.json

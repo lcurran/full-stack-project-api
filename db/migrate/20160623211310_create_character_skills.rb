@@ -3,7 +3,7 @@ class CreateCharacterSkills < ActiveRecord::Migration
     create_table :character_skills do |t|
       t.references :character, index: true, foreign_key: true
       t.references :skill, index: true, foreign_key: true
-      t.integer :value
+      t.integer :skill_value
 
       t.timestamps null: false
     end

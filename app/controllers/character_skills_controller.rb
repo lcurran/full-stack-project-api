@@ -1,6 +1,8 @@
 #
-class CharacterSkillsController < ApplicationController
+class CharacterSkillsController < ProtectedController
   before_action :set_character_skill, only: [:show, :update, :destroy]
+  skip_before_action :authenticate, only: [:index, :show]
+
 
   # GET /character_skills
   # GET /character_skills.json
@@ -57,6 +59,6 @@ class CharacterSkillsController < ApplicationController
   end
 
   def character_skill_params
-    params.require(:character).permit(:character_id, :skill_id, :value)
+    params.require(:character).permit(:character_id, :skill_id, :skill_value)
   end
 end

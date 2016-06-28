@@ -1,6 +1,8 @@
 #
-class CharacterSpellsController < ApplicationController
+class CharacterSpellsController < ProtectedController
   before_action :set_character_spell, only: [:show, :update, :destroy]
+  skip_before_action :authenticate, only: [:index, :show]
+
 
   # GET /character_spells
   # GET /character_spells.json
