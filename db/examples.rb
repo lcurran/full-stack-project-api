@@ -38,9 +38,20 @@ Character.create!(user_id: '1', name: 'Wash')
 Character.create!(user_id: '1', name: 'Zoe')
 Character.create!(user_id: '1', name: 'River')
 
-CharacterStat.create!(stat_id: 1,
-                      character_id: 1,
-                      stat_value: 15,
-                      saving_throw: 3)
+CharacterStat.create!(stat_id: 1, character_id: 1, stat_value: 15)
+CharacterStat.create!(stat_id: 2, character_id: 1, stat_value: 17)
+CharacterStat.create!(stat_id: 3, character_id: 1, stat_value: 13)
+CharacterStat.create!(stat_id: 4, character_id: 1, stat_value: 12)
+CharacterStat.create!(stat_id: 5, character_id: 1, stat_value: 18)
+CharacterStat.create!(stat_id: 6, character_id: 1, stat_value: 14)
+CharacterStat.create!(stat_id: 7, character_id: 1, stat_value: 15)
 
-CharacterSkill.create!(skill_id: 1, character_id: 1, skill_value: 15)
+CharacterSkill.create!(skill_id: 1, character_id: 1, skill_value: 5)
+CharacterSkill.create!(skill_id: 10, character_id: 1, skill_value: 7)
+CharacterSkill.create!(skill_id: 15, character_id: 1, skill_value: 10)
+CharacterSkill.create!(skill_id: 20, character_id: 1, skill_value: 8)
+
+CharacterSpell.create!(spell_id: 57, character_id: 1)
+CharacterSpell.create!(spell_id: 20, character_id: 1)
+CharacterSpell.create!(spell_id: 1, character_id: 1)
+CharacterSpell.create!(spell_id: 100, character_id: 1)
