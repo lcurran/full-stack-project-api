@@ -4,4 +4,4 @@
 
 Data structure model:
 
-![data model](http://imgur.com/B3jptEn)
+![data model](http://i.imgur.com/B3jptEn.png)
